@@ -1,6 +1,7 @@
 require "personalities"
 require "items"
 
+function gameState()
   local sdf = {}
   local dialogueCharacter = nil
   local inventory = {}
@@ -79,6 +80,7 @@ end
 
 -- Stuff done flags à la Blades of Exile
 
+g = gameState()
 
 -- SDF setup. This is the totality of the world's state, as described
 -- by flags. Each flag is a table - optionally give each a description
@@ -110,5 +112,7 @@ end
 flags = { amethyst_stolen = false }
 
 g.takeItem("nilli", "am a thist", flags)
+print(items.amethyst.desc)
+
 personalities[1].exitScript()
 -- print(sdf[20][1][1])
